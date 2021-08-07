@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie Catalog</title>
+</head>
+<body>
+    {% for movie in movies %}
+        {{ movie.movie_name }}<br>
+        {{ movie.genre_name }}<br>
+        {{ movie.release_date }}<br>
+        {{ movie.run_time }}<br>
+        {{ movie.age_rating }}<br>
+        {{ movie.format_type }}<br>
+        {{ movie.movie_story }}<br>
+        {{ movie.star_rating }}<br>
+        {{ movie.wish_list }}<br>
+    {% endfor %}
+    
+</body>
+</html>
+
+
