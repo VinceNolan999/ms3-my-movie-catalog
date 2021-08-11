@@ -3,8 +3,8 @@
 
 
 <div class="row">
-
-    <div class="col s6 m4 l3">
+    {% for movie in movies %}
+    <div class="col s6 m4 l2">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="images/office.jpg">
@@ -17,7 +17,7 @@
             <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Card Title<i
                         class="material-icons right">close</i></span>
-                {% for movie in movies %}
+                
                 {{ movie.movie_name }}<br>
                 {{ movie.genre_name }}<br>
                 {{ movie.release_date }}<br>
@@ -27,10 +27,10 @@
                 {{ movie.movie_story }}<br>
                 {{ movie.star_rating }}<br>
                 {{ movie.wish_list }}<br>
-                {% endfor %}
             </div>
         </div>
     </div>
+    {% endfor %}
 </div>
 
 
