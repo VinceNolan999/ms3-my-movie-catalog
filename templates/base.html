@@ -23,7 +23,7 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li class="active"><a href="{{ url_for('get_movies') }}">Home</a></li>
-          <li><a href="#">Profile</a></li>
+          <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
           <li><a href="#">Add Movie</a></li>
           <li><a href="#">Edit Movie</a></li>
           <li><a href="#">Log Out</a></li>
@@ -37,7 +37,7 @@
         <h4 class="center-align">My Movie Catalog</h4>
       </li>
       <li><a href="{{ url_for('get_movies') }}">Home</a></li>
-      <li><a href="#">Profile</a></li>
+      <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
       <li><a href="#">Add Movie</a></li>
       <li><a href="#">Edit Movie</a></li>
       <li><a href="#">Log Out</a></li>
