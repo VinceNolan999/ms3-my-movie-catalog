@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Add Movie</h3>
+
+    <div class="row">
+        <form class="col s12" method="POST" action="">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="movie_name" name="movie_name" maxlenght="25" type="text" class="validate" required>
+                    <label for="movie_name">Movie Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                        <select id="genre_name" name="genre_name" class="validate" required>
+                        <option value="" disabled selected>Choose Genre</option>
+                        {% for genres in genre %}
+                            <option value="{{ genres.genre_name }}">{{ genres.genre_name }}</option>
+                        {% endfor %}
+                    </select>
+					<label for="category_name">Task Category</label>
+                  </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="release_date" name="release_date" type="text" class="datepicker validate" required>
+                    <label for="release_date">Release Date (Only need to enter YEAR)</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <textarea id="movie_story" name="movie_story" class="materialize-textarea" required></textarea>
+                    <label for="movie_story">Movie Story</label>
+                  </div>
+                <div class="input-field col s12">
+                    <div class="switch">
+                        <i class="material-icons prefix">account_circle</i>
+                        <label for="wish_list">
+                        <input type="checkbox" id="wish_list" name="wish_list">
+                        <span class="lever"></span>
+                        Wish List
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
