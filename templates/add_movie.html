@@ -15,8 +15,8 @@
                     <i class="material-icons prefix">account_circle</i>
                         <select id="genre_name" name="genre_name" class="validate" required>
                         <option value="" disabled selected>Choose Genre</option>
-                        {% for genres in genre %}
-                            <option value="{{ genres.genre_name }}">{{ genres.genre_name }}</option>
+                        {% for genre in genres %}
+                            <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
                         {% endfor %}
                     </select>
 					<label for="category_name">Task Category</label>
