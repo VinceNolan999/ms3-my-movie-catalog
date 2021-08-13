@@ -84,7 +84,9 @@
             <!-- add movie button -->
             <div class="row">
                 <div class="col s12 center-align"> 
-                    <button class="btn waves-effect waves-light" type="submit">
+                    <a href="{{ url_for('get_movies') }}" class="btn red waves-effect waves-light">Cancel</a>
+                    <a href="{{ url_for('add_movie') }}" class="btn orange waves-effect waves-light">Clear</a>
+                    <button class="btn green waves-effect waves-light" type="submit">
                         Add Movie<i class="material-icons right">send</i>
                     </button>
                 </div>
