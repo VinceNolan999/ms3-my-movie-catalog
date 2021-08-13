@@ -3,6 +3,9 @@ For loop issue.  Named the collection as genre (should of used plural), should i
 uniformity in forloop {% for genre in genres %} Forced me to write {% for genres in genre %}
 
 
+CI code validation for required field on forms used
+
+
 
 
 
