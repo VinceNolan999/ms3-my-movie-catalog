@@ -122,6 +122,19 @@ def add_movie():
                            ages=ages)
 
 
+@app.route("/edit_movie/<movie_id>", methods=["GET", "POST"])
+def edit_movie(movie_id):
+    movie = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
+    genres = mongo.db.genres.find().sort("genre_name", 1)
+    formats = mongo.db.formats.find()
+    ages = mongo.db.ages.find()
+    return render_template("edit_movie.html",
+                           movie=movie,
+                           genres=genres,
+                           formats=formats,
+                           ages=ages)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
