@@ -1,3 +1,11 @@
+
+For loop issue.  Named the collection as genre (should of used plural), should ideally of been genres.  
+uniformity in forloop {% for genre in genres %} Forced me to write {% for genres in genre %}
+
+
+
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome VinceNolan999,

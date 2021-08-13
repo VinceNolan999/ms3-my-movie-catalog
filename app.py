@@ -93,10 +93,33 @@ def logout():
 
 
 # Add Movie section
-@app.route("/add_movie")
+@app.route("/add_movie", methods=["GET", "POST"])
 def add_movie():
+    if request.method == "POST":
+        wish_list = "on" if request.form.get("wish_list") else "off"
+        movie = {
+            "genre_name": request.form.get("genre_name"),
+            "movie_name": request.form.get("movie_name"),
+            "release_date": request.form.get("release_date"),
+            "run_time": request.form.get("run_time"),
+            "age_rating": request.form.get("age_rating"),
+            "format_type": request.form.get("format_type"),
+            "movie_story": request.form.get("movie_story"),
+            "wish_list": wish_list,
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"]
+            }
+        mongo.db.movies.insert_one(movie)
+        flash("Movie is added")
+        return redirect(url_for("get_movies"))
+
     genres = mongo.db.genres.find().sort("genre_name", 1)
-    return render_template("add_movie.html", genres=genres)
+    formats = mongo.db.formats.find()
+    ages = mongo.db.ages.find()
+    return render_template("add_movie.html",
+                           genres=genres,
+                           formats=formats,
+                           ages=ages)
 
 
 if __name__ == "__main__":
