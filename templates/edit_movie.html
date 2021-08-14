@@ -99,9 +99,22 @@
             </div>
             <!-- edit movie button and cancel -->
             <div class="row">
-                <div class="col s12 center-align">
-                    <!-- delete button -->
-                    <a href="{{ url_for('delete_movie', movie_id=movie._id) }}" class="btn red waves-effect waves-light">Delete</a>
+                <div class="col s12 center-align">                   
+                    <!-- Delete Button with Modal Trigger -->
+                    <a class="btn red waves-effect waves-light modal-trigger" href="#modal1">Delete</a>
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                        <h4>Are you sure you want to delete?</h4>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="center-align modal-button">
+                            <a href="#!" class="modal-close red waves-effect waves-light btn">Cancel</a>
+                            <a href="{{ url_for('delete_movie', movie_id=movie._id) }}" class="modal-close green waves-effect waves-light btn">Delete</a>
+                            </div>
+                        </div>
+                    </div>          
+
                     <!-- cancel button -->
                     <a href="{{ url_for('get_movies') }}" class="btn orange waves-effect waves-light">Go Back</a>
                     <!-- edit button-->

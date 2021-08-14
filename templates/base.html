@@ -23,11 +23,14 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li class="active"><a href="{{ url_for('get_movies') }}">Home</a></li>
+          {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a href="{{ url_for('add_movie' )}}">Add Movie</a></li>
             <li><a href="#">Edit Movie</a></li>
             <li><a href="{{ url_for('logout' )}}">Log Out</a></li>
+          {% else %}
             <li><a href="{{ url_for('login') }}">Log In/Register</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
@@ -37,11 +40,14 @@
         <h4 class="center-align">My Movie Catalog</h4>
       </li>
       <li><a href="{{ url_for('get_movies') }}">Home</a></li>
+      {% if session.user %}
       <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
       <li><a href="{{ url_for('add_movie' )}}">Add Movie</a></li>
       <li><a href="#">Edit Movie</a></li>
       <li><a href="{{ url_for('logout' )}}">Log Out</a></li>
+      {% else %}
       <li><a href="{{ url_for('login') }}">Log In/Register</a></li>
+      {% endif %}
     </ul>
   </header>
 
