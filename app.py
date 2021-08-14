@@ -124,6 +124,23 @@ def add_movie():
 
 @app.route("/edit_movie/<movie_id>", methods=["GET", "POST"])
 def edit_movie(movie_id):
+    if request.method == "POST":
+        wish_list = "on" if request.form.get("wish_list") else "off"
+        update = {
+            "genre_name": request.form.get("genre_name"),
+            "movie_name": request.form.get("movie_name"),
+            "release_date": request.form.get("release_date"),
+            "run_time": request.form.get("run_time"),
+            "age_rating": request.form.get("age_rating"),
+            "format_type": request.form.get("format_type"),
+            "movie_story": request.form.get("movie_story"),
+            "wish_list": wish_list,
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"]
+            }
+        mongo.db.movies.update({"_id": ObjectId(movie_id)}, update)
+        flash("Movie is updated")
+
     movie = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
     genres = mongo.db.genres.find().sort("genre_name", 1)
     formats = mongo.db.formats.find()
