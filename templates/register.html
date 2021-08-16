@@ -22,18 +22,35 @@
           <label for="username">Username length 5-15 </label>
         </div>
       </div>
+      <!-- email -->
+      <div class="row">
+        <div class="input-field col s12">
+            <i class="prefix light-blue-text text-darken-4 material-icons">email</i>
+            <input id="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="validate" required />
+            <label for="email">Email</label>
+        </div>
+    </div>
       <!-- password -->
       <div class="row">
         <div class="input-field col s12">
           <i class="prefix light-blue-text text-darken-4 material-icons">lock</i>
-          <input id="password1" name="password" type="password" class="validate"
+          <input id="password" name="password" type="password" class="validate"
           minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,15}$" required>
           <label for="password">Password length 5-10</label>
         </div>
       </div>
+      <!-- password confirm-->
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="prefix light-blue-text text-darken-4 material-icons">lock</i>
+          <input id="password2" type="password" class="validate"
+          minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,15}$" required>
+          <label for="password2">Confirm Password</label>
+        </div>
+      </div>
       <!-- register -->
       <div class="row">
-        <button class="btn waves-effect waves-light col s4 offset-s4 " type="submit">Register
+        <button class="btn waves-effect waves-light col s4 offset-s4 " onclick="passwordValidate()" type="submit">Register
           <i class="material-icons">send</i>
         </button>
       </div>
