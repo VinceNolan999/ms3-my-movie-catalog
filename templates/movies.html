@@ -1,36 +1,61 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!--<div class="row center-align genre-select">
+        <a class="waves-effect waves-light btn-small">All Movies</a>
+        {% for genre in genres %}
+        <a class="waves-effect waves-light btn-small">{{ genre.genre_name }}</a>
+        {% endfor %}
+    </div>  -->
 
-<div class="row">
-    {% for movie in movies %}
-    <div class="col s6 m4 l2">
-        <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img src="{{ url_for('static', filename = 'images/clipboard.jpg') }}" class="activator">
+    <div class="row">
+        <form class="search-input" action="{{ url_for('search') }}" method="POST">
+            <input type="search" placeholder="movie name or description" name="query" id="query" />
+            <div class="search-btns">
+                <button class="btn blue waves-effect waves-light" type="submit">
+                    Search<i class="material-icons right">send</i>
+                </button>
+                <a href="{{ url_for('get_movies') }}" class="red btn text-shadow">Reset</a>
             </div>
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">{{ movie.movie_name }}
-                    <i class="material-icons right">more_vert</i></span>
-                <a class="waves-effect waves-light btn-small" href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit</a>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">{{ movie.movie_name }}<i
-                        class="material-icons right">close</i></span>
-                {{ movie.genre_name }}<br>
-                {{ movie.release_date }}<br>
-                {{ movie.run_time }}<br>
-                {{ movie.age_rating }}<br>
-                {{ movie.format_type }}<br>
-                {{ movie.movie_story }}<br>
-                {{ movie.wish_list }}<br>
-                <p><em>by: {{movie.created_by}}</em></p>
-            </div>
-        </div>
+        </form>
     </div>
-    {% endfor %}
-</div>
-
-
+    
+    
+    {% if movies|length > 0 %}
+    <div class="row">
+        <ul class="movie-cards">
+            {% for movie in movies %}
+            <div class="col s6 m4 l2">
+                <li>
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img src="{{ url_for('static', filename = 'images/clipboard.jpg') }}" class="activator">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">{{ movie.movie_name }}
+                                <i class="material-icons right">more_vert</i></span>
+                            <a class="waves-effect waves-light btn-small" href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit</a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">{{ movie.movie_name }}<i
+                                    class="material-icons right">close</i></span>
+                            {{ movie.genre_name }}<br>
+                            {{ movie.release_date }}<br>
+                            {{ movie.run_time }}<br>
+                            {{ movie.age_rating }}<br>
+                            {{ movie.format_type }}<br>
+                            {{ movie.movie_story }}<br>
+                            {{ movie.wish_list }}<br>
+                            <p><em>by: {{movie.created_by}}</em></p>
+                        </div>
+                    </div>
+                </li> 
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <h3>No movies Found</h3>
+    {% endif %}
 
 {% endblock %}
