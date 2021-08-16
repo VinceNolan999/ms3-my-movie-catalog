@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!--<div class="row center-align genre-select">
-        <a class="waves-effect waves-light btn-small">All Movies</a>
-        {% for genre in genres %}
-        <a class="waves-effect waves-light btn-small">{{ genre.genre_name }}</a>
-        {% endfor %}
-    </div>  -->
+    <!--Categories Menu -->
+<a class="btn" href="{{ url_for('get_movies') }}">All movies</a>
+
+{% for genre in genres %} 
+    <a class="btn" href="{{url_for('movie_genre_sort', genre=genre.genre_name)}}">{{ genre.genre_name }}</a>
+{% endfor %}  
+
 
     <div class="row">
         <form class="search-input" action="{{ url_for('search') }}" method="POST">

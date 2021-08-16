@@ -34,6 +34,14 @@ def search():
     return render_template("movies.html", movies=movies)
 
 
+# movie  display by genre
+@app.route("/movies/<genre>")
+def movie_genre_sort(genre):
+    movies = list(mongo.db.movies.find({'genre_name': genre}))
+    genres = mongo.db.genres.find()
+    return render_template("movies.html", movies=movies, genres=genres)
+
+
 # user registration
 @app.route("/register", methods=["GET", "POST"])
 def register():
