@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 @app.route("/get_movies")
 def get_movies():
     movies = list(mongo.db.movies.find())
-    genres = list(mongo.db.genres.find())
+    genres = list(mongo.db.genres.find().sort("genre_name", 1))
     return render_template("movies.html", movies=movies, genres=genres)
 
 
@@ -39,7 +39,7 @@ def search():
 @app.route("/movies_genre_sort/<genre>")
 def movie_genre_sort(genre):
     movies = list(mongo.db.movies.find({'genre_name': genre}))
-    genres = mongo.db.genres.find()
+    genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("movies.html", movies=movies, genres=genres)
 
 
