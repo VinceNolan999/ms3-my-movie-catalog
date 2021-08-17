@@ -32,7 +32,8 @@ def get_movies():
 def search():
     query = request.form.get("query")
     movies = list(mongo.db.movies.find({"$text": {"$search": query}}))
-    return render_template("movies.html", movies=movies)
+    genres = list(mongo.db.genres.find().sort("genre_name", 1))
+    return render_template("movies.html", movies=movies, genres=genres)
 
 
 # movie  display by genre
@@ -47,7 +48,8 @@ def movie_genre_sort(genre):
 @app.route("/wish_list")
 def wish_list():
     movies = list(mongo.db.movies.find({"wish_list": "on"}))
-    return render_template("movies.html", movies=movies)
+    genres = mongo.db.genres.find().sort("genre_name", 1)
+    return render_template("movies.html", movies=movies, genres=genres)
 
 
 # user registration
