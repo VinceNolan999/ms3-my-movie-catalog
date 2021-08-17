@@ -17,6 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # get all movies
 @app.route("/")
 @app.route("/get_movies")
@@ -192,12 +193,52 @@ def delete_movie(movie_id):
     return redirect(url_for("get_movies"))
 
 
+# Mongo categories lists
 @app.route("/get_categories")
 def get_categories():
     genres = list(mongo.db.genres.find().sort("genre_name", 1))
     formats = list(mongo.db.formats.find().sort("format_type", 1))
-    ages = list(mongo.db.ages.find().sort("age_rating", 1))
-    return render_template("categories.html", genres=genres, formats=formats, ages=ages)
+    ages = list(mongo.db.ages.find())
+    return render_template("categories.html",
+                           genres=genres,
+                           formats=formats,
+                           ages=ages)
+
+
+# add genre
+@app.route("/add_genre", methods=["GET", "POST"])
+def add_genre():
+    if request.method == "POST":
+        genre = {
+            "genre_name": request.form.get("genre_name")
+        }
+        mongo.db.genres.insert_one(genre)
+        flash("New Genre Added")
+        return redirect(url_for("get_categories"))
+
+    return render_template("add_genre.html")
+
+
+# edit genre
+@app.route("/edit_genre/<genre_id>", methods=["GET", "POST"])
+def edit_genre(genre_id):
+    if request.method == "POST":
+        update = {
+            "genre_name": request.form.get("genre_name")
+        }
+        mongo.db.genres.update({"_id": ObjectId(genre_id)}, update)
+        flash("Genre Updated")
+        return redirect(url_for("get_categories"))
+    genre = mongo.db.genres.find_one({"_id": ObjectId(genre_id)})
+    return render_template("edit_genre.html", genre=genre)
+
+
+# delete genre
+@app.route("/delete_genre/<genre_id>")
+def delete_genre(genre_id):
+    mongo.db.genres.remove({"_id": ObjectId(genre_id)})
+    flash("Genre Deleted")
+    return redirect(url_for("get_categories"))
 
 
 if __name__ == "__main__":
