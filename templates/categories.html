@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Genres</h3>
+
+
+<div class="row">
+    {% for genre in genres %}
+    <div class="col s12 m4 l3">
+      <div class="card blue-grey darken-1 text-shadow">
+        <div class="card-content white-text">
+          <span class="card-title">{{ genre.genre_name }}</span>
+        </div>
+        <div class="card-action">
+          <a href="#" class="btn orange waves-effect waves-light">Edit</a>
+          <a href="#" class="btn red waves-effect waves-light">Delete</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h3 class="center-align">Age Ratings</h3>
+
+<div class="row">
+    {% for age in ages %}
+    <div class="col s12 m4 l3">
+      <div class="card blue-grey darken-1 text-shadow">
+        <div class="card-content white-text">
+          <span class="card-title">{{ age.age_rating }}</span>
+        </div>
+        <div class="card-action">
+          <a href="#" class="btn orange waves-effect waves-light">Edit</a>
+          <a href="#" class="btn red waves-effect waves-light">Delete</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+
+<h3 class="center-align">Formats</h3>
+
+<div class="row">
+    {% for format in formats %}
+    <div class="col s12 m4 l3">
+      <div class="card blue-grey darken-1 text-shadow">
+        <div class="card-content white-text">
+          <span class="card-title">{{ format.format_type }}</span>
+        </div>
+        <div class="card-action">
+          <a href="#" class="btn orange waves-effect waves-light">Edit</a>
+          <a href="#" class="btn red waves-effect waves-light">Delete</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

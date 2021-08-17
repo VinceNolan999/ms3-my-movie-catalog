@@ -17,7 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+# get all movies
 @app.route("/")
 @app.route("/get_movies")
 def get_movies():
@@ -40,6 +40,13 @@ def movie_genre_sort(genre):
     movies = list(mongo.db.movies.find({'genre_name': genre}))
     genres = mongo.db.genres.find()
     return render_template("movies.html", movies=movies, genres=genres)
+
+
+# movie displayed by wish-list toggle
+@app.route("/wish_list")
+def wish_list():
+    movies = list(mongo.db.movies.find({"wish_list": "on"}))
+    return render_template("movies.html", movies=movies)
 
 
 # user registration
@@ -146,6 +153,7 @@ def add_movie():
                            ages=ages)
 
 
+# edit movie
 @app.route("/edit_movie/<movie_id>", methods=["GET", "POST"])
 def edit_movie(movie_id):
     if request.method == "POST":
@@ -176,11 +184,20 @@ def edit_movie(movie_id):
                            ages=ages)
 
 
+# delete movie
 @app.route("/delete_movie/<movie_id>")
 def delete_movie(movie_id):
     mongo.db.movies.remove({"_id": ObjectId(movie_id)})
     flash("Movie Deleted")
     return redirect(url_for("get_movies"))
+
+
+@app.route("/get_categories")
+def get_categories():
+    genres = list(mongo.db.genres.find().sort("genre_name", 1))
+    formats = list(mongo.db.formats.find().sort("format_type", 1))
+    ages = list(mongo.db.ages.find().sort("age_rating", 1))
+    return render_template("categories.html", genres=genres, formats=formats, ages=ages)
 
 
 if __name__ == "__main__":

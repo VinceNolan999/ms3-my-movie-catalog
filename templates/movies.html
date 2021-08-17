@@ -8,6 +8,7 @@
             {% for genre in genres %} 
                 <a class="btn" href="{{url_for('movie_genre_sort', genre=genre.genre_name)}}">{{ genre.genre_name }}</a>
             {% endfor %} 
+            <a class="btn" href="{{ url_for('wish_list') }}">Wish List</a>
         </div>
     </div>
     
