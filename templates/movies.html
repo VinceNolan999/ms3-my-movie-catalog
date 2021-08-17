@@ -15,7 +15,7 @@
     <div class="row center">
         <form class="search-input" action="{{ url_for('search') }}" method="POST">
             <div class="center col s12 m8">
-                <input type="search" placeholder="movie name or description" name="query" id="query"/>
+                <input type="search" placeholder="movie name or description" minlength="3" name="query" id="query"/>
             </div>
             <div class="search-btns left">
                 <button class="btn-small blue waves-effect waves-light" type="submit">

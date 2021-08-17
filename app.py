@@ -35,7 +35,7 @@ def search():
 
 
 # movie  display by genre
-@app.route("/movies/<genre>")
+@app.route("/movies_genre_sort/<genre>")
 def movie_genre_sort(genre):
     movies = list(mongo.db.movies.find({'genre_name': genre}))
     genres = mongo.db.genres.find()
@@ -57,6 +57,7 @@ def register():
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
+
         }
         mongo.db.users.insert_one(register)
         # creates 'session'
@@ -99,7 +100,12 @@ def login():
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+    email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+    if session["user"]:
+        return render_template("profile.html", username=username, email=email)
+
+    return redirect(url_for("login"))
 
 
 # remove user session cookie
