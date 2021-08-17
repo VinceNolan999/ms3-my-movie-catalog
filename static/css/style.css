@@ -9,9 +9,17 @@ main {
     flex: 1 0 auto;
 }
 
-
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.box-shadow {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);   
+}
+
+.edit-background {
+    background: white;
+    opacity: 0.9;
 }
 
 .nav-wrapper {
@@ -21,7 +29,6 @@ main {
 footer ul li {
     display: inline;
 }
-
 
 .hero-image {
   background-attachment: fixed;
@@ -43,6 +50,11 @@ footer ul li {
     text-transform: capitalize;
 }
 
+.card-image img{
+    height: 350px;
+    overflow: hidden;
+}
+
 .card .card-reveal {
     padding: 0;
 }
@@ -52,26 +64,13 @@ footer ul li {
     text-transform: capitalize;
 }
 
-
 .card-reveal .card-info {
     line-height: 1.2em;
     margin: 8px 2px 8px;
     padding-left: 10px
-    
 }
 
 .card-reveal .card-story{
     margin: 10px 2px 16px;
     padding-left: 10px  
-}
-
-
-.edit-background {
-    background: white;
-    opacity: 0.9;
-}
-
-
-.box-shadow {
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
 }
