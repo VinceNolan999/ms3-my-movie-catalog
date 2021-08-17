@@ -1,7 +1,77 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+.nav-wrapper {
+    padding-left: 1rem;
+}
+
 footer ul li {
     display: inline;
-  }
+}
+
+
+.hero-image {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.genre-buttons {
+    padding-top: 1rem;
+}
+
+.genre-buttons .btn-margin {
+    margin: 0.2rem;
+}
+
+.card-content .card-title{
+    font-size: 1.6em;
+    text-transform: capitalize;
+}
+
+.card .card-reveal {
+    padding: 0;
+}
+.card-reveal .card-title{
+    padding-top: 10px;
+    padding-left: 10px;
+    text-transform: capitalize;
+}
+
+
+.card-reveal .card-info {
+    line-height: 1.2em;
+    margin: 8px 2px 8px;
+    padding-left: 10px
+    
+}
+
+.card-reveal .card-story{
+    margin: 10px 2px 16px;
+    padding-left: 10px  
+}
+
+
+.edit-background {
+    background: white;
+    opacity: 0.9;
+}
+
+
+.box-shadow {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+}

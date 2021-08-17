@@ -1,70 +1,75 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!--categories menu -->
-    <div class="row">
-        <div class="center">
-            <a class="btn" href="{{ url_for('get_movies') }}">All movies</a>
-            {% for genre in genres %} 
-                <a class="btn" href="{{url_for('movie_genre_sort', genre=genre.genre_name)}}">{{ genre.genre_name }}</a>
-            {% endfor %} 
-            <a class="btn" href="{{ url_for('wish_list') }}">Wish List</a>
+<!--categories menu -->
+<div class="row genre-buttons">
+    <div class="center">
+        <a class="btn light-blue text-shadow darken-3 waves-effect waves-light btn-margin"
+            href="{{ url_for('get_movies') }}">All movies</a>
+        {% for genre in genres %}
+        <a class="btn light-blue darken-3 text-shadow waves-effect waves-light btn-margin"
+            href="{{url_for('movie_genre_sort', genre=genre.genre_name)}}">{{ genre.genre_name }}</a>
+        {% endfor %}
+        <a class="btn light-blue darken-3 text-shadow waves-effect waves-light btn-margin"
+            href="{{ url_for('wish_list') }}">Wish List</a>
+    </div>
+</div>
+
+<!--search menu-->
+<div class="row center">
+    <form class="search-input" action="{{ url_for('search') }}" method="POST">
+        <div class="center col s12 m8">
+            <input type="search" placeholder="movie name or description" name="query" id="query" />
         </div>
-    </div>
-    
-    <!--search menu-->
-    <div class="row center">
-        <form class="search-input" action="{{ url_for('search') }}" method="POST">
-            <div class="center col s12 m8">
-                <input type="search" placeholder="movie name or description" minlength="3" name="query" id="query"/>
-            </div>
-            <div class="search-btns left">
-                <button class="btn-small blue waves-effect waves-light" type="submit">
-                    Search<i class="material-icons right">send</i>
-                </button>
-                <a href="{{ url_for('get_movies') }}" class="red btn-small text-shadow">Reset</a>
-            </div>
-        </form>
-    </div>
-    
-    <!--movie cards-->
-    {% if movies|length > 0 %}
-    <div class="row">
-        <ul class="movie-cards">
-            {% for movie in movies %}
-            <div class="col s6 m4 l2">
-                <li>
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="{{ url_for('static', filename = 'images/clipboard.jpg') }}" class="activator">
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">{{ movie.movie_name }}
+        <div class="search-btns left">
+            <button class="btn-small green waves-effect waves-light text-shadow" type="submit">
+                Search<i class="material-icons right">send</i>
+            </button>
+            <a href="{{ url_for('get_movies') }}" class="red btn-small waves-effect waves-light text-shadow">Reset</a>
+        </div>
+    </form>
+</div>
+
+<!--movie cards-->
+{% if movies|length > 0 %}
+<div class="row">
+    <ul class="movie-cards">
+        {% for movie in movies %}
+        <div class="col s6 m4 l3">
+            <li>
+                <div class="card box-shadow">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img src="{{ url_for('static', filename = 'images/clipboard.jpg') }}" class="activator">
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <span class="card-title activator grey-text text-darken-4"><strong>{{ movie.movie_name }}</strong>
                                 <i class="material-icons right">more_vert</i></span>
                             {% if session.user %}
-                            <a class="waves-effect waves-light btn-small" href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit</a>
+                            <a class="light-blue darken-3 waves-effect waves-light btn-small text-shadow"
+                                href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit</a>
                             {% endif %}
                         </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">{{ movie.movie_name }}<i
-                                    class="material-icons right">close</i></span>
-                            {{ movie.genre_name }}<br>
-                            {{ movie.release_date }}<br>
-                            {{ movie.run_time }}<br>
-                            {{ movie.age_rating }}<br>
-                            {{ movie.format_type }}<br>
-                            {{ movie.movie_story }}<br>
-                            {{ movie.wish_list }}<br>
-                            <p><em>by: {{movie.created_by}}</em></p>
-                        </div>
                     </div>
-                </li> 
-            </div>
-            {% endfor %}
-        </ul>
-    </div>
-    {% else %}
-    <h3>No movies Found</h3>
-    {% endif %}
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4 center"><strong>{{ movie.movie_name }}</strong><i
+                                class="material-icons right">close</i></span><br>
+                        <p class="card-info">{{ movie.genre_name }}<i class="material-icons left">theater_comedy</i></p>
+                        <p class="card-info">{{ movie.release_date }}<i class="material-icons left">date_range</i></p>
+                        <p class="card-info">{{ movie.run_time }}<i class="material-icons left">schedule</i></p>
+                        <p class="card-info">{{ movie.age_rating }}<i class="material-icons left">family_restroom</i></p>
+                        <p class="card-info">{{ movie.format_type }}<i class="material-icons left">videocam</i></p>
+                        <p class="card-story">{{ movie.movie_story }}</p><br>
+                        <p class="card-info"><em>by: {{movie.created_by}}</em></p>
+                    </div>
+                </div>
+            </li>
+        </div>
+        {% endfor %}
+    </ul>
+</div>
+{% else %}
+<h3>No Movies Found</h3>
+{% endif %}
 
 {% endblock %}

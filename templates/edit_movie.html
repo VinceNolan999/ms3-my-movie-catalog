@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Edit Movie</h3>
+    <h3 class="center-align edit-background text-shadow">Edit Movie</h3>
 
-    <div class="row">
+    <div class="row edit-background">
         <form class="col s12" method="POST" action="{{ url_for('edit_movie', movie_id=movie._id) }}">
             <div class="row">
                 <!-- movie name -->
