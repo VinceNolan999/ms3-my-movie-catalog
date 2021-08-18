@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align edit-background text-shadow">Edit Movie</h3>
+    <h3 class="center-align bg-opaque text-shadow">Edit Movie</h3>
 
-    <div class="row edit-background">
+    <div class="row bg-opaque">
         <form class="col s12" method="POST" action="{{ url_for('edit_movie', movie_id=movie._id) }}">
             <div class="row">
                 <!-- movie name -->
@@ -98,7 +98,7 @@
                 </div>
             </div>
             <!-- edit movie button and cancel -->
-            <div class="row">
+            <div class="row edit_movie">
                 <div class="col s12 center-align">                   
                     <!-- Delete Button with Modal Trigger -->
                     <a class="btn red waves-effect waves-light modal-trigger" href="#modal1">Delete</a>

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Edit Genre</h3>
+<h3 class="center-align bg-opaque">Edit Genre</h3>
 
-<div class="row edit-background">
+<div class="row bg-opaque">
     <form class="col s12" method="POST" action="{{ url_for('edit_genre', genre_id=genre._id) }}">
         <div class="row">
             <!-- Genre name -->
