@@ -1,97 +1,98 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align edit-background">Add Movie</h3>
+<h3 class="center-align edit-background">Add Movie</h3>
 
-    <div class="row edit-background">
-        <form class="col s12" method="POST" action="{{ url_for('add_movie') }}">
-            <div class="row">
-                <!-- movie name -->
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="movie_name" name="movie_name" maxlength="25" type="text" class="validate" required>
-                    <label for="movie_name">Movie Name</label>
-                </div>
-                <!-- genre selector -->
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <select id="genre_name" name="genre_name" class="validate" required>
+<div class="row edit-background">
+    <form class="col s12" method="POST" action="{{ url_for('add_movie') }}">
+        <div class="row">
+            <!-- movie name -->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">movie</i>
+                <input id="movie_name" name="movie_name" maxlength="25" type="text" class="validate" required>
+                <label for="movie_name">Movie Name</label>
+            </div>
+            <!-- genre selector -->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">theater_comedy</i>
+                <select id="genre_name" name="genre_name" class="validate" required>
                     <option value="" disabled selected>Choose Genre</option>
                     {% for genre in genres %}
-                        <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                    <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
                     {% endfor %}
-                    </select>
-                    <label for="genre_name"></label>
-                </div>
-                <!-- format selector -->
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <select id="format_type" name="format_type" class="validate" required>
+                </select>
+                <label for="genre_name"></label>
+            </div>
+            <!-- format selector -->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">videocam</i>
+                <select id="format_type" name="format_type" class="validate" required>
                     <option value="" disabled selected>Choose Format</option>
                     {% for format in formats %}
-                        <option value="{{ format.format_type }}">{{ format.format_type }}</option>
+                    <option value="{{ format.format_type }}">{{ format.format_type }}</option>
                     {% endfor %}
-                    </select>
-                    <label for="format_type"></label>
-                </div>
-                <!-- age selector -->
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <select id="age_rating" name="age_rating" class="validate" required>
+                </select>
+                <label for="format_type"></label>
+            </div>
+            <!-- age selector -->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">family_restroom</i>
+                <select id="age_rating" name="age_rating" class="validate" required>
                     <option value="" disabled selected>Choose Age Rating</option>
                     {% for age in ages %}
-                        <option value="{{ age.age_rating }}">{{ age.age_rating }}</option>
+                    <option value="{{ age.age_rating }}">{{ age.age_rating }}</option>
                     {% endfor %}
-                    </select>
-                    <label for="age_rating"></label>
-                </div>
-                <!-- run time -->
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="run_time" name="run_time" maxlength="3" type="text" class="validate" required>
-                    <label for="run_time">Run Time (Mins)</label>
-                </div>
-                <!-- release date picker -->
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="release_date" name="release_date" type="number" class="datepicker validate" min="1900" max="2050" required>
-                    <label for="release_date">Release Date (Only need to enter YEAR)</label>
-                </div>
-                <!-- movie story -->
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <textarea id="movie_story" name="movie_story" class="materialize-textarea" required></textarea>
-                    <label for="movie_story">Movie Story</label>
-                </div>
-                <!-- Image Url -->
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="image_url" name="image_url" type="text" class="validate" required>
-                    <label for="image_url">Enter URL for Image</label>
-                </div>
-                <!-- Wish list toggler -->
-                <div class="input-field col s12">
-                    <div class="switch">
-                        <i class="material-icons prefix">account_circle</i>
-                        <label for="wish_list">
+                </select>
+                <label for="age_rating"></label>
+            </div>
+            <!-- run time -->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">schedule</i>
+                <input id="run_time" name="run_time" maxlength="3" type="text" class="validate" required>
+                <label for="run_time">Run Time (Mins)</label>
+            </div>
+            <!-- release date picker -->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">date_range</i>
+                <input id="release_date" name="release_date" type="number" class="datepicker validate" min="1900"
+                    max="2050" required>
+                <label for="release_date">Release Date (Only need to enter YEAR)</label>
+            </div>
+            <!-- movie story -->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">menu_book</i>
+                <textarea id="movie_story" name="movie_story" class="materialize-textarea" required></textarea>
+                <label for="movie_story">Movie Story</label>
+            </div>
+            <!-- Image Url -->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">image</i>
+                <input id="image_url" name="image_url" type="text" class="validate" required>
+                <label for="image_url">Enter URL for Image</label>
+            </div>
+            <!-- Wish list toggler -->
+            <div class="input-field col s12">
+                <div class="switch">
+                    <i class="material-icons prefix">loyalty</i>
+                    <label for="wish_list">
                         <input type="checkbox" id="wish_list" name="wish_list">
                         <span class="lever"></span>
                         Wish List
-                        </label>
-                    </div>
+                    </label>
                 </div>
             </div>
-            <!-- add movie button -->
-            <div class="row">
-                <div class="col s12 center-align"> 
-                    <a href="{{ url_for('get_movies') }}" class="btn red waves-effect waves-light">Cancel</a>
-                    <a href="{{ url_for('add_movie') }}" class="btn orange waves-effect waves-light">Clear</a>
-                    <button class="btn green waves-effect waves-light" type="submit">
-                        Add Movie<i class="material-icons right">send</i>
-                    </button>
-                </div>
+        </div>
+        <!-- add movie button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('get_movies') }}" class="btn red waves-effect waves-light">Cancel</a>
+                <a href="{{ url_for('add_movie') }}" class="btn orange waves-effect waves-light">Clear</a>
+                <button class="btn green waves-effect waves-light" type="submit">
+                    Add Movie<i class="material-icons right">send</i>
+                </button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

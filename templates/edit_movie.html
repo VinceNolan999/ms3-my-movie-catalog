@@ -8,13 +8,13 @@
             <div class="row">
                 <!-- movie name -->
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix">movie</i>
                     <input id="movie_name" name="movie_name" value="{{ movie.movie_name }}" maxlength="25" type="text" class="validate" required>
                     <label for="movie_name">Movie Name</label>
                 </div>
                 <!-- genre selector -->
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix">theater_comedy</i>
                     <select id="genre_name" name="genre_name" class="validate" required>
                     <option value="" disabled selected>Choose Genre</option>
                     {% for genre in genres %}
@@ -29,7 +29,7 @@
                 </div>
                 <!-- format selector -->
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix">videocam</i>
                     <select id="format_type" name="format_type" class="validate" required>
                     <option value="" disabled selected>Choose Format</option>
                     {% for format in formats %}
@@ -44,7 +44,7 @@
                 </div>
                 <!-- age selector -->
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix">family_restroom</i>
                     <select id="age_rating" name="age_rating" class="validate" required>
                     <option value="" disabled selected>Choose Age Rating</option>
                     {% for age in ages %}
@@ -59,32 +59,32 @@
                 </div>
                 <!-- run time -->
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix">schedule</i>
                     <input id="run_time" name="run_time" value="{{ movie.run_time }}" maxlength="3" type="text" class="validate" required>
                     <label for="run_time">Run Time (Mins)</label>
                 </div>
                 <!-- release date picker -->
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix">date_range</i>
                     <input id="release_date" name="release_date" value="{{ movie.release_date}}" type="number" class="datepicker validate" min="1900" max="2050" required>
                     <label for="release_date">Release Date (Only need to enter YEAR)</label>
                 </div>
                 <!-- movie story -->
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix">menu_book</i>
                     <textarea id="movie_story" name="movie_story" class="materialize-textarea" required>{{ movie.movie_story }}</textarea>
                     <label for="movie_story">Movie Story</label>
                 </div>
                 <!-- Image Url -->
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
+                    <i class="material-icons prefix">image</i>
                     <input id="image_url" name="image_url" value="{{ movie.image_url }}" type="text" class="validate" required>
                     <label for="image_url">Enter URL for Image</label>
                 </div>
                 <!-- Wish list toggler -->
                 <div class="input-field col s12">
                     <div class="switch">
-                        <i class="material-icons prefix">account_circle</i>
+                        <i class="material-icons prefix">loyalty</i>
                         <label for="wish_list">
                             {% if movie.wish_list == "on" %} 
                                 <input type="checkbox" id="wish_list" name="wish_list" checked>
