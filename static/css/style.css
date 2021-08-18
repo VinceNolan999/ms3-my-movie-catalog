@@ -9,18 +9,12 @@ main {
     flex: 1 0 auto;
 }
 
-.text-shadow {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.box-shadow {
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);   
-}
-
-.edit-background {
-    background: white;
-    opacity: 0.9;
-}
+.hero-image {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
 .nav-wrapper {
     padding-left: 1rem;
@@ -30,11 +24,18 @@ footer ul li {
     display: inline;
 }
 
-.hero-image {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/*----  Custom styling classes -----  */
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.box-shadow {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);   
+}
+
+.bg-opaque {
+    background: white;
+    opacity: 0.9;
 }
 
 .genre-buttons {
@@ -45,9 +46,15 @@ footer ul li {
     margin: 0.2rem;
 }
 
+/*----  Movie card styling -----  */
 .card-content .card-title{
     font-size: 1.6em;
     text-transform: capitalize;
+}
+
+.card-content .material-icons {
+    font-size: 20px;
+    margin-left: 0px;
 }
 
 .card-image img{
@@ -58,6 +65,7 @@ footer ul li {
 .card .card-reveal {
     padding: 0;
 }
+
 .card-reveal .card-title{
     padding-top: 10px;
     padding-left: 10px;
@@ -74,3 +82,45 @@ footer ul li {
     margin: 10px 2px 16px;
     padding-left: 10px  
 }
+
+
+/*----  Media Queries -----  */
+
+
+@media screen and (max-width: 480px) {
+    .card-image img{
+        height: 200px;
+    }
+
+    .card-content .card-title  {
+        font-size: 1em;
+    }
+
+    .card-content .material-icons {
+        font-size: 16px;
+        margin-left: 0px;
+    }
+
+    .card-reveal p {
+        font-size: 0.8em;
+        padding: 0;
+    }
+
+    .card-reveal .material-icons {
+        font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .card-image img{
+        height: 250px;
+    }
+
+  }
+
+  @media screen and (max-width: 1024px) {
+    .card-image img{
+        height: 250px;
+    }
+
+  }
