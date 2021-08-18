@@ -10,6 +10,7 @@ main {
 }
 
 .hero-image {
+	background: url('../images/background.jpg') ;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
