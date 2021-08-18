@@ -35,8 +35,7 @@
 <div class="row">
     {% for movie in movies %}
     <div class="col s6 m4 l3">
-        <ul class="movie-cards"></ul>
-        <li>
+        <div class="movie-cards">
             <div class="card box-shadow">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img src="{{ movie.image_url }}" type="url" onerror="this.src='/static/images/url-onerror.jpg'"
@@ -48,8 +47,8 @@
                             class="card-title activator grey-text text-darken-4"><strong>{{ movie.movie_name }}</strong>
                             <i class="material-icons right">more_vert</i></span>
                         {% if session.user %}
-                            <a class="light-blue darken-3 waves-effect waves-light btn-small text-shadow"
-                              href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit</a>
+                        <a class="light-blue darken-3 waves-effect waves-light btn-small text-shadow"
+                            href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit</a>
                         {% endif %}
                     </div>
                 </div>
@@ -65,8 +64,7 @@
                     <p class="card-info"><em>by: {{movie.created_by}}</em></p>
                 </div>
             </div>
-        </li>
-        </ul>
+        </div>
     </div>
     {% endfor %}
 
@@ -76,5 +74,3 @@
 {% endif %}
 
 {% endblock %}
-
-<!--   {{ url_for('static', filename = 'images/clipboard.jpg') }}   -->
