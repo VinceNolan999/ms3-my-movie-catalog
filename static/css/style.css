@@ -1,86 +1,86 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    font-size: 16px;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	font-size: 16px;
 }
 
 main {
-    flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 
 .hero-image {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
 .nav-wrapper {
-    padding-left: 1rem;
+	padding-left: 1rem;
 }
 
 footer ul li {
-    display: inline;
+	display: inline;
 }
 
 /*----  Custom styling classes -----  */
 .text-shadow {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .box-shadow {
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);   
+	box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
 }
 
 .bg-opaque {
-    background: white;
-    opacity: 0.9;
+	background: white;
+	opacity: 0.9;
 }
 
 .genre-buttons {
-    padding-top: 1rem;
+	padding-top: 1rem;
 }
 
 .genre-buttons .btn-margin {
-    margin: 0.2rem;
+	margin: 0.2rem;
 }
 
 /*----  Movie card styling -----  */
-.card-content .card-title{
-    font-size: 1.6em;
-    text-transform: capitalize;
+.card-content .card-title {
+	font-size: 1.6em;
+	text-transform: capitalize;
 }
 
 .card-content .material-icons {
-    font-size: 20px;
-    margin-left: 0px;
+	font-size: 20px;
+	margin-left: 0;
 }
 
-.card-image img{
-    height: 350px;
-    overflow: hidden;
+.card-image img {
+	height: 350px;
+	overflow: hidden;
 }
 
 .card .card-reveal {
-    padding: 0;
+	padding: 0;
 }
 
-.card-reveal .card-title{
-    padding-top: 10px;
-    padding-left: 10px;
-    text-transform: capitalize;
+.card-reveal .card-title {
+	padding-top: 10px;
+	padding-left: 10px;
+	text-transform: capitalize;
 }
 
 .card-reveal .card-info {
-    line-height: 1.2em;
-    margin: 8px 2px 8px;
-    padding-left: 10px
+	line-height: 1.2em;
+	margin: 8px 2px 8px;
+	padding-left: 10px;
 }
 
-.card-reveal .card-story{
-    margin: 10px 2px 16px;
-    padding-left: 10px  
+.card-reveal .card-story {
+	margin: 10px 2px 16px;
+	padding-left: 10px;
 }
 
 
@@ -88,39 +88,37 @@ footer ul li {
 
 
 @media screen and (max-width: 480px) {
-    .card-image img{
-        height: 200px;
-    }
+	.card-image img {
+		height: 200px;
+	}
 
-    .card-content .card-title  {
-        font-size: 1em;
-    }
+	.card-content .card-title {
+		font-size: 1em;
+	}
 
-    .card-content .material-icons {
-        font-size: 16px;
-        margin-left: 0px;
-    }
+	.card-content .material-icons {
+		font-size: 16px;
+		margin-left: 0;
+	}
 
-    .card-reveal p {
-        font-size: 0.8em;
-        padding: 0;
-    }
+	.card-reveal p {
+		font-size: 0.8em;
+		padding: 0;
+	}
 
-    .card-reveal .material-icons {
-        font-size: 16px;
-    }
-  }
+	.card-reveal .material-icons {
+		font-size: 16px;
+	}
+}
 
-  @media screen and (max-width: 768px) {
-    .card-image img{
-        height: 250px;
-    }
+@media screen and (max-width: 768px) {
+	.card-image img {
+		height: 250px;
+	}
+}
 
-  }
-
-  @media screen and (max-width: 1024px) {
-    .card-image img{
-        height: 250px;
-    }
-
-  }
+@media screen and (max-width: 1024px) {
+	.card-image img {
+		height: 250px;
+	}
+}

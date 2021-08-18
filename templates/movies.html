@@ -33,43 +33,46 @@
 <!--movie cards-->
 {% if movies|length > 0 %}
 <div class="row">
-    <ul class="movie-cards">
-        {% for movie in movies %}
-        <div class="col s6 m4 l3">
-            <li>
-                <div class="card box-shadow">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img src="{{ movie.image_url }}" type="url" onerror="this.src='/static/images/url-onerror.jpg'" class="activator">
-                    </div>
-                    <div class="card-content">
-                        <div class="row">
-                            <span class="card-title activator grey-text text-darken-4"><strong>{{ movie.movie_name }}</strong>
-                                <i class="material-icons right">more_vert</i></span>
-                            {% if session.user %}
+    {% for movie in movies %}
+    <div class="col s6 m4 l3">
+        <ul class="movie-cards"></ul>
+        <li>
+            <div class="card box-shadow">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img src="{{ movie.image_url }}" type="url" onerror="this.src='/static/images/url-onerror.jpg'"
+                        alt="movie image" class="activator">
+                </div>
+                <div class="card-content">
+                    <div class="row">
+                        <span
+                            class="card-title activator grey-text text-darken-4"><strong>{{ movie.movie_name }}</strong>
+                            <i class="material-icons right">more_vert</i></span>
+                        {% if session.user %}
                             <a class="light-blue darken-3 waves-effect waves-light btn-small text-shadow"
-                                href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit</a>
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4 center"><strong>{{ movie.movie_name }}</strong><i
-                                class="material-icons right">close</i></span><br>
-                        <p class="card-info">{{ movie.genre_name }}<i class="material-icons left">theater_comedy</i></p>
-                        <p class="card-info">{{ movie.release_date }}<i class="material-icons left">date_range</i></p>
-                        <p class="card-info">{{ movie.run_time }}<i class="material-icons left">schedule</i></p>
-                        <p class="card-info">{{ movie.age_rating }}<i class="material-icons left">family_restroom</i></p>
-                        <p class="card-info">{{ movie.format_type }}<i class="material-icons left">videocam</i></p>
-                        <p class="card-story">{{ movie.movie_story }}</p><br>
-                        <p class="card-info"><em>by: {{movie.created_by}}</em></p>
+                              href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit</a>
+                        {% endif %}
                     </div>
                 </div>
-            </li>
-        </div>
-        {% endfor %}
-    </ul>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4 center"><strong>{{ movie.movie_name }}</strong><i
+                            class="material-icons right">close</i></span><br>
+                    <p class="card-info">{{ movie.genre_name }}<i class="material-icons left">theater_comedy</i></p>
+                    <p class="card-info">{{ movie.release_date }}<i class="material-icons left">date_range</i></p>
+                    <p class="card-info">{{ movie.run_time }}<i class="material-icons left">schedule</i></p>
+                    <p class="card-info">{{ movie.age_rating }}<i class="material-icons left">family_restroom</i></p>
+                    <p class="card-info">{{ movie.format_type }}<i class="material-icons left">videocam</i></p>
+                    <p class="card-story">{{ movie.movie_story }}</p><br>
+                    <p class="card-info"><em>by: {{movie.created_by}}</em></p>
+                </div>
+            </div>
+        </li>
+        </ul>
+    </div>
+    {% endfor %}
+
 </div>
 {% else %}
-<h3>No Movies Found</h3>
+    <h3>No Movies Found</h3>
 {% endif %}
 
 {% endblock %}
