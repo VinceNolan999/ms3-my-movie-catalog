@@ -1,13 +1,5 @@
-
-For loop issue.  Named the collection as genre (should of used plural), should ideally of been genres.  
-uniformity in forloop {% for genre in genres %} Forced me to write {% for genres in genre %}
-
-hero image  failed validation.   moved from base to css.
-
-
 # My Movie Catalog
 
-### [Link to Live Github hosted website](https://vincenolan999.github.io/ms3-my-movie-catalog/)
 ### [Link to Live Heroku hosted website](https://ms3-my-movie-catalog.herokuapp.com/)
 
 ## <u>Screenshots</u>
@@ -178,13 +170,13 @@ hero image  failed validation.   moved from base to css.
 
 #### Main Movie search section
 
--  
-
 #### Profile Page
 
 -  Basic profile page displaying the username and email address of the user.
 
 ### Existing Features
+
+- unique username creation
 
 - password validation on registration form. 
 
@@ -224,7 +216,7 @@ hero image  failed validation.   moved from base to css.
 
 * [Python](https://www.python.org/)
 
-  - programming language. Utilizing the following tools 
+  - programming language. Utilizing the following tools:
     - Pymongo - used to link python with mongo DB
     - Werkzeug - For password hash and username
 
@@ -278,30 +270,6 @@ hero image  failed validation.   moved from base to css.
     - Navbar brand link disabled
     - Hamburger menu appears at relevant view width and drop down menu works correctly
 
-- Map and Location Section 
-
-    - Googlemaps responsive, markers are shown and when pressed the information section including image is changed (all markers checked and correct)
-
-- partner links
-
-    - All 5 links tested and redirect to a new tab of the correct website
-  
-- Contact Page.
-    
-    - Each input box highlights light blues as intended  (helps with contrast)
-    - Fill in field warning for input boxes present if left blank.
-    - Fill in field with email address correctly displayed
-    - Fill in field for textarea present.
-    - Form completed with correct details to test receipt of message.
-         - Send email button wording changes to 'sending'
-         - Sent! alert box appears requiring a click on ok. (correct)
-         - 'sending' button returns to 'send email'
-         - Contact from is reset.
-         - Emails is received from Emailjs, this confirms contact form working as intended.
-         
-- Footer 
-    - Clicking the footer icons takes you to the correct website opened in a new tab.
-
 ### Functionality testing
 
 - chrome Browser used to run Gitpod and developer tools used to test , solve problems, style and responsiveness.
@@ -338,20 +306,24 @@ and a Motorola  one+ mobile phone with no issues noted
 
 ### User stories testing
 
--
 
 ### Returning User Stories Testing
 
-- 
 
 ### Issues found during development
 
--  
+-  For loop issue.  Named the collection as genre (should of used plural), should have been genres as this creates
+uniformity in 'forloop' {% for genre in genres %} Forced me to write {% for genres in genre %}
+
+- Hero image failed validation.  This was due to the the image being directly in the HTML code and also using a Jinja expression to locate the file. 
+  A simpler method was placing in the css file as 'background' and linking via a class. This warning was also similar for the default image of the onerror when displaying a image of the movie. 
+
+  
 
 ### Performance testing
 
   - I have used [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for the performance testing.
-     Initially showed performance drops due to Images being too large. 
+      
 
 #### Desktop performance
 
@@ -409,19 +381,15 @@ this repository ([ms2-surfs-up-ireland](https://github.com/VinceNolan999/ms2-sur
 
 ### Content
 
-- 
+
 
 ### Media
 
-- Images are dynamically loaded via a Url. 
-
-                                      
+- Images are dynamically loaded via a Url and added by a user.                                    
 
 ### Acknowledgments
 
-- Mentor - ADEGBENGA ADEYE 
-
 - Code Institute Pre-loaded github tools
 
- 
+
 [Back to Table of contents](#table-of-contents)
