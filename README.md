@@ -4,7 +4,7 @@
 
 ## <u>Screenshots</u>
 
-![screenshot](assets/media/docs/ms2-preveiw.png) 
+![screenshots](assets/media/docs/ms2-preveiw.png) 
 
 ## A Python and Data Centric Development Project
 
@@ -13,7 +13,7 @@
 ---
 ## <u>Table of Contents</u>
 - [Screenshots](#screenshots)
-- [UX](#ux)
+- [UX](#UX)
     - [User goals](#user-goals)
     - [User stories](#user-stories)
     - [Structure of the website](#structure-of-the-website)
@@ -170,6 +170,12 @@
 
 #### Main Movie search section
 
+- A selection of Buttons allowing searches by genre type. 
+
+- A search bar allowing searches by movie name or description text.
+
+- Movie display tiles 
+
 #### Profile Page
 
 -  Basic profile page displaying the username and email address of the user.
@@ -188,7 +194,7 @@
 
 - Deleted movies to remain on database but removed from users view. Admin section to re-instated deleted movies or perma delete.
 
-- Link in movie cards that can direct a user to a purchase of that movie, potential to earn money via referals.
+- Link in movie cards that can direct a user to a purchase of that movie, potential to earn money via refferals.
 
 - registration to capture more details from the user, eg, name, address etc.  This will be displayed on the profile page. In addition the profile page
   will have options for the user to update there infomation and/or delete the account.
@@ -197,14 +203,17 @@
 
 - Various levels of users which opens up more access.  At present only 2 levels. User or admin.  example could be only allowed to edit/delete there own movies. 
   
-- Movie rating.
+- Movie rating display. 
 
 [Back to Table of contents](#table-of-contents)
 
 ---
 ## <u>Technology Used</u>
 
+
 * [MongoDB](https://www.mongodb.com/)
+
+  - A source-available cross-platform document-oriented database program
 
 * [Flask](https://flask.palletsprojects.com)
   
@@ -265,10 +274,97 @@
 ---
 ## <u>Testing</u>
 
-- Navbar
-    - Clicking on the menu links takes you to the desired section.
-    - Navbar brand link disabled
-    - Hamburger menu appears at relevant view width and drop down menu works correctly
+Continuous ongoing testing during development to ensure functions working correctly and as intended. Below is final test regime to confirm.
+
+### User Not logged In
+- Navbar 
+    - Only access is to the Home and Login section.
+    - Brand and Home button takes to correct page.
+    - Pressing log in takes to correct screen
+      - Register link present. 
+        - Registration form displays correctly.
+        - form validation working correctly.
+        - password validation works correctly.  Validation shows mesasge 'passwords do not match'.
+        - user created on MongoDB and profile page present when logged in.
+    - Hamburger menu appears at relevant view width and drop down menu works correctly and correct links present and working.
+
+- Search Section
+  - all genre select buttons and the Wishlist button displaying the correct movie from the movie card details.
+  - Search bar correctly display the movies by name or by movie description. 
+  - Search and Reset button working as intended.
+
+- Movie cards
+  - displayed as inteneded. Pressing the card reveals information about the movie.  Movies without a correct Url image link display a stock
+    placeholder image.
+  - No access to edit facility
+
+### User Logged In  
+
+- Navbar 
+  - Confrirmed that there is no access to the admin section.
+  - Logged in user lands at the profile page, flash message displayed welcoming User.
+    - flash message displayed if entering incorrect username or password.
+  - Menu options goto the correct page.
+  - Log Out works correctly.  Only options of home and Log in present, no ability to edit movies.
+
+- Search Section
+  - all genre select buttons and the Wishlist button displaying the correct movie from the movie card details.
+  - Search bar correctly display the movies by name or by movie description. 
+  - Search and Reset button working as intended.
+
+- Movie cards
+  - displayed as inteneded. Pressing the card reveals information about the film.  Films without a correct Url image link display a stock
+    placeholder image.
+  - access to edit facility. pressing the edit button takes you to the correct edit screen for the movie.
+
+- Edit Section
+  - Correct details displayed for the selected movie to edit.
+  - All options edited to test the information is changed, works as intended.
+  - wish list toggle works.
+  - Delete button brings up a confirmation button (cancel or delete). Cancel reverts back to edit screen and delete correctly deletes the movie.
+  - Go back takes you back to the home page.
+  - Edit button updates changes to movie information. 
+
+- Profile Section.
+  - pressing takes you to the profile page, displaying username and email.
+
+- Add movie section
+  - Shows a blank form with fields to complete. 
+  - genre, format and age rating are all option boxes which relate to the MongoDB collections.
+  - release date reveals a calender page for selection.
+  - placeholer upl present.
+  - wishlist toggle working correctly.
+  - Form validation working correctly. Red lines under fields not entered, green when completed. 
+  - Cancel button redirects back to home page.
+  - Clear button, clears the form.
+  - Add Movie creates a new card with the information entered and user taken to Home page.
+    - flash message displayed correctly.
+  - Have verified that the correct movie information is present. In addition the 'Created by' is showing the username.
+  
+
+- Log out
+  - session cookie is removed. No access to other features.
+  - flash message confirming 'you are now logged out'
+
+### Admin Logged In 
+
+- All above tests completed and work as intended.
+- Additional Menu Item present of 'Categories'
+
+- Categories.
+  - Opens up a page which shows the Genres.
+  - Add genre revelas new page to input a genre name. 
+    - Cancel redirects to main genre page
+    - clear, clears the form.
+    - Add Genre, when adding new genre,. page redirected to genres page. New genre is displayed.  
+      - Flash message 'New genre added' present
+      - Checking the main Home page the new genre is now included in the Genre select buttons.
+      - The edit button on movie tile selected, from the drop down list the new genre is present.
+      - On add movie form, new genre is present.
+  - Each title has a edit or delete button. Edit brings up the correct genre field, the buttons present works as above.
+    - Editing works as inteneded,  Flash message 'Genre updated' present
+    - delete button remove the genre from page. In addition no longer selectable as search button or in the edit movie form or add movie form.
+      - Flash message 'Genre Deleted'
 
 ### Functionality testing
 
@@ -287,7 +383,7 @@ issues seen on either. A wide range of screen sizes tested from mobile, tablet a
 - I have tested compatibility on the heroku published website of the project on a 1920 x 1080 monitor, a galaxy s7 
 and a Motorola  one+ mobile phone with no issues noted
 
-- The website was submitted for peer review and no Issues were recorded by thous viewing.
+- The website was submitted for peer review and no Issues were mentioned
 
 ### Code Validation
 -  https://jigsaw.w3.org/css-validator/   
@@ -302,7 +398,13 @@ and a Motorola  one+ mobile phone with no issues noted
 
     - Errors present in the default JS code for googlemaps that i cannot change. No errors relating to my unique code.
 
--  https://pep8online.com - app.py file checked - all right
+-  https://pep8online.com - app.py file checked
+
+    - all right
+
+-  https://seositecheckup.com/analysis 
+
+    - 404 custom error page tester - passed
 
 ### User stories testing
 
@@ -318,20 +420,20 @@ uniformity in 'forloop' {% for genre in genres %} Forced me to write {% for genr
 - Hero image failed validation.  This was due to the the image being directly in the HTML code and also using a Jinja expression to locate the file. 
   A simpler method was placing in the css file as 'background' and linking via a class. This warning was also similar for the default image of the onerror when displaying a image of the movie. 
 
-  
+- Modal button created in the categories section for Genres when deleting.  However on testing it was not working as intended. Confirmation appeared as intended, but when confirmed for deletion the wrong Genre would be deleted. This was always the first displayed in the list. No quick fix found, confirmed modal button setup was correct, decided to leave this out as this is an admin function.   
 
 ### Performance testing
 
-  - I have used [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for the performance testing.
-      
+  - I have used [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for the performance testing. As the file sizes are
+    downloaded by URL this affected the performance speed. Using URL's was recommended by 
 
 #### Desktop performance
 
-![Final performance desktop](assets/media/docs/desktop-lighthouse.png)
+![Performance desktop](static/readme-docs/lh-desktop.jpg)
 
 #### Mobile Performance
 
-![Final performance mobile](assets/media/docs/mobile-lighthouse.png)
+![Performance mobile](static/readme-docs/lh-mobile.png)
 
 
 [Back to Table of contents](#table-of-contents)
@@ -339,25 +441,85 @@ uniformity in 'forloop' {% for genre in genres %} Forced me to write {% for genr
 ---
 ## <u>Deployment</u>
 
-My project was developed on Gitpod with regular commits during development to Github via pushing. This also ensured against data loss.
+Github used as version control for this project with deployment of the website via Heroku.
 
-To deploy my project in github I took the following steps.
+To deploy the project you will first need to clone the repositry locatated at github.
 
-- Login and Select the repository in github. ([ms2-surfs-up-ireland](https://github.com/VinceNolan999/ms2-surfs-up-ireland))
-- Click on the settings button
-- locate the Github pages section.
-- Select 'save' and then refresh or an auto refresh
-- Displayed at top of Github pages - Your site is published at https://vincenolan999.github.io/ms2-surfs-up-ireland/
+A full walk-through from github is available here [cloning a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository)
 
-To Deploy locally.
-- Login and Select the repository in github. [ms2-surfs-up-ireland](https://github.com/VinceNolan999/ms2-surfs-up-ireland)
-- Go-to 'code' and  'download zip'
-- Locate the ZIP file, unpack and deploy into your local environment.
+- Once cloned in the command terminal type:
+- pip3 install Flask
+- touch app.py (creates app file)
+- touch env.py (same as above)
+- tounch gitinore (if not present) and add the following
+    - env.py
+    - --pycache--/
 
-Alternatively you can [Clone](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
-or [Fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo)
-this repository ([ms2-surfs-up-ireland](https://github.com/VinceNolan999/ms2-surfs-up-ireland)) into your github account.
+- In the env.py 
+    - import os
+    - set confidential data from MongoDB collection
+        -  IP : 0.0.0.0 
+        -  PORT : 5000 
+        -  SECRET_KEY : YOUR_SECRET_KEY 
+        -  MONGO_URI : “mongo db link” 
+        -  MONGO_DBNAME : “database name”
 
+- The requirements.txt should contain the following dependencies
+    - click==8.0.1
+    - dnspython==2.1.0
+    - Flask==2.0.1
+    - Flask-PyMongo==2.3.0
+    - itsdangerous==2.0.1
+    - pymongo==3.12.0
+    - Werkzeug==2.0.1
+
+- Add Procfile that contains:
+    - web: python app.py
+
+
+#### MongoBD Setup
+
+- Login to your account
+- Create Database and add 5 collections (ages, formats, genres, movies and users) which will have the following values:
+
+        - ages
+              - age_rating
+        - formats
+              - format_type (BluRay etc)
+        - genres
+              - genre_name (film genre types)
+
+- The following collection values will be created within the application as data added.
+
+        - movies (genre_name, movie_name, release_date,
+                  run_time, age_rating, format_type,
+                  movie_story, wish_list, image_url,
+                  created_by)
+
+        - users
+              - username, password, email
+
+Setup MongoDB security and database access
+
+
+#### How to deploy to deploy the project to the hosting platform Heroku:
+
+- Create new app (must use dash or minus , use similar to repo name(or same as)
+
+    - Region = europe
+    - CREATE APP
+    - Deployment method  =  Github
+    - Search for repo to connect to  (PRESS CONNECT)
+
+dont auto deploy just yet!!
+
+- Goto settings at top. then reveal config vars.
+
+    - Input vaules from the env.py file   (PORT, IP, SECRET_KEY, MONGO_URI, MONGO_DBNAME)
+
+    - You must push the new files to github (procfile and requirements.txt)  =  git status then git commits.
+
+Enable automatic deploys  then Deploy branch (main)
 
 
 [Back to Table of contents](#table-of-contents)
@@ -373,11 +535,13 @@ this repository ([ms2-surfs-up-ireland](https://github.com/VinceNolan999/ms2-sur
 
 * [codeinstitute](https://codeinstitute.net/) - Ongoing course progression
 
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/) - User Guide
+
 ### Code Templates
 
 - Various [Materilize](https://materializecss.com) templates used.
 
-- CI code validation for forms where required field is needed.  This was provided in the mini project 'task manager'
+- CI code validation for form inputs where the 'required' field is needed.  This was provided in the mini project 'task manager'.
 
 ### Content
 
@@ -387,7 +551,7 @@ this repository ([ms2-surfs-up-ireland](https://github.com/VinceNolan999/ms2-sur
 
 - Images are dynamically loaded via a Url and added by a user.                                    
 
-### Acknowledgments
+### Acknowledgments.
 
 - Code Institute Pre-loaded github tools
 
