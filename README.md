@@ -73,7 +73,7 @@
 
 - I want to be able to delete movies from the database
 
-- I want to be able to tag a movie that I would like and that shows in a seperate search.
+- I want to be able to tag a movie that I would like and that shows in a separate search.
 
 #### As A returning user.
 
@@ -93,11 +93,11 @@
 
 - Each user to have a unique login and secure password only known to them.
 
-- abilty for users to log out of the account.
+- ability for users to log out of the account.
 
 - Tasks such as editing and adding movies should display the users details.
 
-- deleting movies should require a confirmationary request to prevent accidental deletion.
+- deleting movies should require a conformationally request to prevent accidental deletion.
 
 - users should be able to search for movies, this to be by movie name, description, genre type or by 'wish list'
 
@@ -109,7 +109,7 @@
 ### Structure of the website
 
 - I want the website to be easily accessible, simple to navigate and user friendly. It must also be displayed 
-  for various devices (desktop ,Tablet, Mobile Phone) whilst mantaiining a great user experience . Links within the website taking me to other features
+  for various devices (desktop ,Tablet, Mobile Phone) whilst maintaining a great user experience . Links within the website taking me to other features
 
 #### Database Schema
 
@@ -120,11 +120,11 @@
 
 - This website will consist of of a landing page that has view only access to the displayed movie tiles And a limited navigation bar with the option to login or register.. 
 
- The search and genre select button shoule be accesible for all. Once a user is registered and logged in, other feature becaome avaialbe. Further Navigation links are present for 'Profile' and 'Add Movie'. In addition the login button is replaced with a log out button.  Ae search bar to search by movie name or movie description present in addition to Select movies by genre. The Film tiles will also contain an edit button that allows editing of the movi details, adding and editing movies will attribute to the user details. Users can also delete the movie within the edit function.  Pressing the button will require a confirmation click to delete to help prevent accidental deletions. 
+ The search and genre select button should be accessible for all. Once a user is registered and logged in, other feature became available. Further Navigation links are present for 'Profile' and 'Add Movie'. In addition the login button is replaced with a log out button.  Ae search bar to search by movie name or movie description present in addition to Select movies by genre. The Film tiles will also contain an edit button that allows editing of the movie details, adding and editing movies will attribute to the user details. Users can also delete the movie within the edit function.  Pressing the button will require a confirmation click to delete to help prevent accidental deletions. 
 
-- A basic pofile page confirming the username and associated email address which is required upon registration. 
+- A basic profile page confirming the username and associated email address which is required upon registration. 
 
-- Add movie section that reveals form categorys for the user to complete which are relevant to the movie. The section of Genre, format and age rating are all dropdown selection boxes, however the options from these are gathered from the the database in linked librarys. All options are self explainitory. The URL option at the bottom is pre filled with an example HTML.  IF user has no film specific URL this can be left as is and submitted.  A wishlist toggle button at the bottom that adds a further field for displaying movies the users may want.  Buttons present that cancels the form (redirect back to home screen), clears the form and Adds the movie.
+- Add movie section that reveals form category's for the user to complete which are relevant to the movie. The section of Genre, format and age rating are all dropdown selection boxes, however the options from these are gathered from the the database in linked librarys. All options are self explanatory. The URL option at the bottom is pre filled with an example HTML.  IF user has no film specific URL this can be left as is and submitted.  A wishlist toggle button at the bottom that adds a further field for displaying movies the users may want.  Buttons present that cancels the form (redirect back to home screen), clears the form and Adds the movie.
 
 - Log out tab.   Clears the users session cookie 
 
@@ -192,12 +192,12 @@
 
 #### Future Features 
 
-- Deleted movies to remain on database but removed from users view. Admin section to re-instated deleted movies or perma delete.
+- Deleted movies to remain on database but removed from users view. Admin section to re-instated deleted movies or permanent delete.
 
-- Link in movie cards that can direct a user to a purchase of that movie, potential to earn money via refferals.
+- Link in movie cards that can direct a user to a purchase of that movie, potential to earn money via referrals.
 
 - registration to capture more details from the user, eg, name, address etc.  This will be displayed on the profile page. In addition the profile page
-  will have options for the user to update there infomation and/or delete the account.
+  will have options for the user to update there information and/or delete the account.
 
 - Ability for admin to remove users ability to add/edit or delete movies based only on user details. 
 
@@ -284,7 +284,7 @@ Continuous ongoing testing during development to ensure functions working correc
       - Register link present. 
         - Registration form displays correctly.
         - form validation working correctly.
-        - password validation works correctly.  Validation shows mesasge 'passwords do not match'.
+        - password validation works correctly.  Validation shows message 'passwords do not match'.
         - user created on MongoDB and profile page present when logged in.
     - Hamburger menu appears at relevant view width and drop down menu works correctly and correct links present and working.
 
@@ -332,7 +332,7 @@ Continuous ongoing testing during development to ensure functions working correc
   - Shows a blank form with fields to complete. 
   - genre, format and age rating are all option boxes which relate to the MongoDB collections.
   - release date reveals a calender page for selection.
-  - placeholer upl present.
+  - Placeholder upl present.
   - wishlist toggle working correctly.
   - Form validation working correctly. Red lines under fields not entered, green when completed. 
   - Cancel button redirects back to home page.
@@ -353,7 +353,7 @@ Continuous ongoing testing during development to ensure functions working correc
 
 - Categories.
   - Opens up a page which shows the Genres.
-  - Add genre revelas new page to input a genre name. 
+  - Add genre reveals new page to input a genre name. 
     - Cancel redirects to main genre page
     - clear, clears the form.
     - Add Genre, when adding new genre,. page redirected to genres page. New genre is displayed.  
@@ -362,7 +362,7 @@ Continuous ongoing testing during development to ensure functions working correc
       - The edit button on movie tile selected, from the drop down list the new genre is present.
       - On add movie form, new genre is present.
   - Each title has a edit or delete button. Edit brings up the correct genre field, the buttons present works as above.
-    - Editing works as inteneded,  Flash message 'Genre updated' present
+    - Editing works as intended,  Flash message 'Genre updated' present
     - delete button remove the genre from page. In addition no longer selectable as search button or in the edit movie form or add movie form.
       - Flash message 'Genre Deleted'
 
@@ -396,7 +396,7 @@ and a Motorola  one+ mobile phone with no issues noted
 
 -  https://wave.webaim.org/ - A web accessibility checker
 
-    - Errors present in the default JS code for googlemaps that i cannot change. No errors relating to my unique code.
+    - xxxx
 
 -  https://pep8online.com - app.py file checked
 
@@ -415,7 +415,7 @@ and a Motorola  one+ mobile phone with no issues noted
 ### Issues found during development
 
 -  For loop issue.  Named the collection as genre (should of used plural), should have been genres as this creates
-uniformity in 'forloop' {% for genre in genres %} Forced me to write {% for genres in genre %}
+uniformity in 'for loop' {% for genre in genres %} Forced me to write {% for genres in genre %}
 
 - Hero image failed validation.  This was due to the the image being directly in the HTML code and also using a Jinja expression to locate the file. 
   A simpler method was placing in the css file as 'background' and linking via a class. This warning was also similar for the default image of the onerror when displaying a image of the movie. 
@@ -443,7 +443,7 @@ uniformity in 'forloop' {% for genre in genres %} Forced me to write {% for genr
 
 Github used as version control for this project with deployment of the website via Heroku.
 
-To deploy the project you will first need to clone the repositry locatated at github.
+To deploy the project you will first need to clone the repository located at github.
 
 A full walk-through from github is available here [cloning a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository)
 
@@ -451,7 +451,7 @@ A full walk-through from github is available here [cloning a repository](https:/
 - pip3 install Flask
 - touch app.py (creates app file)
 - touch env.py (same as above)
-- tounch gitinore (if not present) and add the following
+- touch gitignore (if not present) and add the following
     - env.py
     - --pycache--/
 
@@ -511,11 +511,11 @@ Setup MongoDB security and database access
     - Deployment method  =  Github
     - Search for repo to connect to  (PRESS CONNECT)
 
-dont auto deploy just yet!!
+Do not auto deploy just yet!!
 
 - Goto settings at top. then reveal config vars.
 
-    - Input vaules from the env.py file   (PORT, IP, SECRET_KEY, MONGO_URI, MONGO_DBNAME)
+    - Input values from the env.py file   (PORT, IP, SECRET_KEY, MONGO_URI, MONGO_DBNAME)
 
     - You must push the new files to github (procfile and requirements.txt)  =  git status then git commits.
 
