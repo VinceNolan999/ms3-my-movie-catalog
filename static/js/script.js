@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 	$(".sidenav").sidenav({
 		edge: "right"
 	});
@@ -33,17 +33,17 @@ $(document).ready(function() {
 				"position": "absolute"
 			});
 		}
-		$(".select-wrapper input.select-dropdown").on("focusin", function() {
-			$(this).parent(".select-wrapper").on("change", function() {
-				if ($(this).children("ul").children("li.selected:not(.disabled)").on("click", function() {})) {
+		$(".select-wrapper input.select-dropdown").on("focusin", function () {
+			$(this).parent(".select-wrapper").on("change", function () {
+				if ($(this).children("ul").children("li.selected:not(.disabled)").on("click", function () {})) {
 					$(this).children("input").css(classValid);
 				}
 			});
-		}).on("click", function() {
+		}).on("click", function () {
 			if ($(this).parent(".select-wrapper").children("ul").children("li.selected:not(.disabled)").css("background-color") === "rgba(0, 0, 0, 0.03)") {
 				$(this).parent(".select-wrapper").children("input").css(classValid);
 			} else {
-				$(".select-wrapper input.select-dropdown").on("focusout", function() {
+				$(".select-wrapper input.select-dropdown").on("focusout", function () {
 					if ($(this).parent(".select-wrapper").children("select").prop("required")) {
 						if ($(this).css("border-bottom") != "1px solid rgb(76, 175, 80)") {
 							$(this).parent(".select-wrapper").children("input").css(classInvalid);
