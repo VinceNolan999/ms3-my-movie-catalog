@@ -410,30 +410,35 @@ and a Motorola  one+ mobile phone with no issues noted
 
 - I want to be able to create a user account that allows further access
 
-      -  The website has a user registration section where they can create an account and password which allows access to other features, 
-         such as Adding or editing movie cards.         
+      -  The website has a user registration section where they can create an account and password 
+         which allows access to other features, such as Adding or editing movie cards.         
 
 - I want to be able to log in and log out having a unique user account and password known only to me.
 
-      -  The username and password are stored on a server with the password being encrypted by werkzeug (password_hash). This means
-         even the admin does not have access to the password. A log out function is also present that removes the session cookie and thus the user.
+      -  The username and password are stored on a server with the password being encrypted by 
+         werkzeug (password_hash). This means even the admin does not have access to the password. 
+         A log out function is also present that removes the session cookie and thus the user.
 
 - I want to see Information about movies that are on the database
 
-      -  On the main page there are Movie card tiles, pressing these tiles reveals further information about the movie.
+      -  On the main page there are Movie card tiles, pressing these tiles reveals 
+         further information about the movie.
  
 - I want to be able to add and edit movies on the database which records my user details within the database
 
-      -  Only once registered and logged in, the user is able to edit existing movies and add new movies to the database.
+      -  Only once registered and logged in, the user is able to edit existing movies and 
+         add new movies to the database.
 
 - I want to be able to delete movies from the database
 
-      -  There is a delete button in the edit movie function. This requires a confirmationary button press to delete.
+      -  There is a delete button in the edit movie function. This requires 
+         a confirmationary button press to delete.
 
 - I want to be able to tag a movie that I would like and that shows in a separate search.
 
-      -  A 'wish-list' toggle button has been included in the movie information. This can be selected in the edit movie function or
-         when you create a new movie. A specific 'Wish list' seach button is present in the main search area for quick access to 
+      -  A 'wish-list' toggle button has been included in the movie information. 
+         This can be selected in the edit movie function or when you create a new movie.
+         A specific 'Wish list' seach button is present in the main search area for quick access to 
          the wish list movies.
 
 
@@ -445,21 +450,25 @@ and a Motorola  one+ mobile phone with no issues noted
 
 - I want to edit and add movies and have that action attributed to my account.
 
-      -  As a registered user, you are able to edit and add movies. Doing so will attribute the addition/change to that user by means of
-         a 'created by' section in the movie card listing.
+      -  As a registered user, you are able to edit and add movies. Doing so will 
+         attribute the addition/change to that user by means of a 'created by' 
+         section in the movie card listing.
 
 - I want to be able to delete movies from the database
 
-      -  A registered user is able to delete movies by way of a delete button, a confirmationary button also needs to be pressed.
+      -  A registered user is able to delete movies by way of a delete button, 
+         a confirmationary button also needs to be pressed.
 
 - I want to be able to search the database for movies
 
-      -  The website includes 2 forms of searching. A button selection by Movie Genre's (including 'Wish list' movies) and by a search bar
-         that can search by movie title or words in the description.
+      -  The website includes 2 forms of searching. A button selection by Movie Genre's 
+         (including 'Wish list' movies) and by a search bar that can search by movie title 
+         or words in the description.
 
 - I want to be able to flag movies that I would like to have.
 
-      -  A toggle switch for a 'Wish list' is included in the edit and add movie forms.  This then allows all movies in the 'Wish list' to be displayed 
+      -  A toggle switch for a 'Wish list' is included in the edit and add movie forms. 
+         This then allows all movies in the 'Wish list' to be displayed 
          by clicking the appropriate button in the seach menu.
 
 
@@ -467,34 +476,39 @@ and a Motorola  one+ mobile phone with no issues noted
 
 - To create a website that users can access a catalog of Movies that they own or that they would like to own or watch.
           
-      -  The website allows registered users to add there own movies and details about the movies. They can flag a movie to place it
-         in the wish list section for easier locating.
+      -  The website allows registered users to add there own movies and details about the movies. 
+         They can flag a movie to place it in the wish list section for easier locating.
 
 - Each user to have a unique login and secure password only known to them.
 
-      -  Users can create there own username during registration and a password known only to them. This is stored in a database with the password 
-         being encrypted using a password_hash. 
+      -  Users can create there own username during registration and a password known only to them. 
+         This is stored in a database with the password being encrypted using a password_hash. 
 
 - ability for users to log out of the account.
 
-      -  A log out facility is present once the user is logged in.  Logging out remove the session cookie for that user.
+      -  A log out facility is present once the user is logged in.  
+         Logging out remove the session cookie for that user.
 
 - Tasks such as editing and adding movies should display the users details.
 
-      -  The movie card will display a 'created by' section in the Movie information. This will display the users name.
+      -  The movie card will display a 'created by' section in the Movie information. 
+         This will display the users name.
 
 - deleting movies should require a conformationally request to prevent accidental deletion.
 
-      -  Movies can be deleted in the edit movie mode.  Pressing delete will bring up a modal button to confirm deletion.
+      -  Movies can be deleted in the edit movie mode.  
+         Pressing delete will bring up a modal button to confirm deletion.
 
 - users should be able to search for movies, this to be by movie name, description, genre type or by 'wish list'
 
-      -  The website includes 2 forms of searching. A button selection by Movie Genre's (including 'Wish list' movies) and by a search bar
-         that can search by movie title or words in the description.
+      -  The website includes 2 forms of searching. A button selection by Movie Genre's 
+         (including 'Wish list' movies) and by a search bar that can search by movie title 
+         or words in the description.
 
 - A function that allows users to flag a movie that they would like to watch/own.  A Wish list.
 
-      -  A toggle switch for a 'Wish list' is included in the edit and add movie forms.  This then allows all movies in the 'Wish list' to be displayed 
+      -  A toggle switch for a 'Wish list' is included in the edit and add movie forms.  
+         This then allows all movies in the 'Wish list' to be displayed 
          by clicking the appropriate button in the seach menu.
 
 - A Profile section for the user to verify there details.
