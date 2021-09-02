@@ -2,66 +2,66 @@
 {% block content %}
 
 
-<div class="row">
-  <form class="col s12 m8 offset-m2">
-    <div class="card-panel teal  center-align">
-      <span class="white-text">User Registration</span>
+    <div class="row">
+      <form class="col s12 m8 offset-m2">
+        <div class="card-panel teal  center-align">
+          <span class="white-text">User Registration</span>
+        </div>
+      </form>
     </div>
-  </form>
-</div>
 
-<div class="row">
-  <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-    <div class="card-panel">
-      <!-- username -->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="prefix light-blue-text text-darken-4 material-icons">account_circle</i>
-          <input id="username" name="username" type="text" class="validate"
-          minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
-          <label for="username">Username length 5-15 </label>
+    <div class="row">
+      <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <div class="card-panel">
+          <!-- username -->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="prefix light-blue-text text-darken-4 material-icons">account_circle</i>
+              <input id="username" name="username" type="text" class="validate"
+              minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+              <label for="username">Username length 5-15 </label>
+            </div>
+          </div>
+          <!-- email -->
+          <div class="row">
+            <div class="input-field col s12">
+                <i class="prefix light-blue-text text-darken-4 material-icons">email</i>
+                <input id="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="validate" required />
+                <label for="email">Email</label>
+            </div>
         </div>
-      </div>
-      <!-- email -->
-      <div class="row">
-        <div class="input-field col s12">
-            <i class="prefix light-blue-text text-darken-4 material-icons">email</i>
-            <input id="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="validate" required />
-            <label for="email">Email</label>
+          <!-- password -->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="prefix light-blue-text text-darken-4 material-icons">lock</i>
+              <input id="password" name="password" type="password" class="validate"
+              minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,15}$" required>
+              <label for="password">Password length 5-10</label>
+            </div>
+          </div>
+          <!-- password confirm-->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="prefix light-blue-text text-darken-4 material-icons">lock</i>
+              <input id="password2" type="password" class="validate"
+              minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,15}$" required>
+              <label for="password2">Confirm Password</label>
+            </div>
+          </div>
+          <!-- register -->
+          <div class="row">
+            <button class="btn waves-effect waves-light col s4 offset-s4 " onclick="passwordValidate()" type="submit">Register
+              <i class="material-icons">send</i>
+            </button>
+          </div>
         </div>
+      </form>
     </div>
-      <!-- password -->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="prefix light-blue-text text-darken-4 material-icons">lock</i>
-          <input id="password" name="password" type="password" class="validate"
-          minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,15}$" required>
-          <label for="password">Password length 5-10</label>
-        </div>
-      </div>
-      <!-- password confirm-->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="prefix light-blue-text text-darken-4 material-icons">lock</i>
-          <input id="password2" type="password" class="validate"
-          minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,15}$" required>
-          <label for="password2">Confirm Password</label>
-        </div>
-      </div>
-      <!-- register -->
-      <div class="row">
-        <button class="btn waves-effect waves-light col s4 offset-s4 " onclick="passwordValidate()" type="submit">Register
-          <i class="material-icons">send</i>
-        </button>
+    <div class="row">
+      <div class="col s12">
+          <p class="center-align">
+              <a href="{{ url_for('login') }}" class="">Back to Log In</a>
+          </p>
       </div>
     </div>
-  </form>
-</div>
-<div class="row">
-  <div class="col s12">
-      <p class="center-align">
-          <a href="{{ url_for('login') }}" class="">Back to Log In</a>
-      </p>
-  </div>
-</div>
 {% endblock %}

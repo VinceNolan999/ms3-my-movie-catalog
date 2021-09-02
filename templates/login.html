@@ -1,52 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<div class="row">
-  <form class="col s12 m8 offset-m2">
-    <div class="card-panel teal  center-align">
-      <span class="white-text">log In</span>
-    </div>
-  </form>
-</div>
-
-<div class="row">
-  <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
-    <div class="card-panel">
-      <!-- username -->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="prefix light-blue-text text-darken-4 material-icons">account_circle</i>
-          <input id="username" name="username" type="text" class="validate"
-          minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
-          <label for="username">Username length 5-15 </label>
+    <div class="row">
+      <form class="col s12 m8 offset-m2">
+        <div class="card-panel teal  center-align">
+          <span class="white-text">log In</span>
         </div>
-      </div>
-      <!-- password -->
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="prefix light-blue-text text-darken-4 material-icons">lock</i>
-          <input id="password1" name="password" type="password" class="validate"
-          minlength="5" maxlength="10" pattern="^[a-zA-Z0-9]{5,15}$" required>
-          <label for="password">Password length 5-10</label>
-        </div>
-      </div>
-      <!-- login -->
-      <div class="row">
-        <button class="btn waves-effect waves-light col s4 offset-s4 " type="submit">Log In
-          <i class="material-icons">send</i>
-        </button>
-      </div>
+      </form>
     </div>
-  </form>
-</div>
-<div class="row">
-    <div class="col s12">
+
+    <div class="row">
+      <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+        <div class="card-panel">
+          <!-- username -->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="prefix light-blue-text text-darken-4 material-icons">account_circle</i>
+              <input id="username" name="username" type="text" class="validate" minlength="5" maxlength="15"
+                pattern="^[a-zA-Z0-9]{5,15}$" required>
+              <label for="username">Username length 5-15 </label>
+            </div>
+          </div>
+          <!-- password -->
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="prefix light-blue-text text-darken-4 material-icons">lock</i>
+              <input id="password1" name="password" type="password" class="validate" minlength="5" maxlength="10"
+                pattern="^[a-zA-Z0-9]{5,15}$" required>
+              <label for="password">Password length 5-10</label>
+            </div>
+          </div>
+          <!-- login -->
+          <div class="row">
+            <button class="btn waves-effect waves-light col s4 offset-s4 " type="submit">Log In
+              <i class="material-icons">send</i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col s12">
         <p class="center-align">
-            Need to Register?
-            <a href="{{ url_for('register') }}" class="">Click here</a>
+          Need to Register?
+          <a href="{{ url_for('register') }}" class="">Click here</a>
         </p>
+      </div>
     </div>
-</div>
 
 {% endblock %}
