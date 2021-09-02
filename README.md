@@ -4,7 +4,7 @@
 
 ## <u>Screenshots</u>
 
-![screenshots](assets/media/docs/ms2-preveiw.png) 
+![screenshots](static/readme-docs/Preview.png) 
 
 ## A Python and Data Centric Development Project
 
@@ -87,9 +87,9 @@
 
 - I want to be able to flag movies that I would like to have.
 
-#### Website Owner Goals
+#### Admin Owner Goals
 
-- To create a website that users can access a movie catalog of Movies that they own or that they would like to own or watch.
+- To create a website that users can access a catalog of Movies that they own or that they would like to own or watch.
 
 - Each user to have a unique login and secure password only known to them.
 
@@ -113,7 +113,7 @@
 
 #### Database Schema
 
-![MongoDB Schema](static/images/readme-docs/ms3schema.jpeg)
+![MongoDB Schema](static/readme-docs/ms3schema.jpeg)
 
 ---
 ## <u>Features</u>
@@ -408,9 +408,98 @@ and a Motorola  one+ mobile phone with no issues noted
 
 ### User stories testing
 
+- I want to be able to create a user account that allows further access
+
+      -  The website has a user registration section where they can create an account and password which allows access to other features, 
+         such as Adding or editing movie cards.         
+
+- I want to be able to log in and log out having a unique user account and password known only to me.
+
+      -  The username and password are stored on a server with the password being encrypted by werkzeug (password_hash). This means
+         even the admin does not have access to the password. A log out function is also present that removes the session cookie and thus the user.
+
+- I want to see Information about movies that are on the database
+
+      -  On the main page there are Movie card tiles, pressing these tiles reveals further information about the movie.
+ 
+- I want to be able to add and edit movies on the database which records my user details within the database
+
+      -  Only once registered and logged in, the user is able to edit existing movies and add new movies to the database.
+
+- I want to be able to delete movies from the database
+
+      -  There is a delete button in the edit movie function. This requires a confirmationary button press to delete.
+
+- I want to be able to tag a movie that I would like and that shows in a separate search.
+
+      -  A 'wish-list' toggle button has been included in the movie information. This can be selected in the edit movie function or
+         when you create a new movie. A specific 'Wish list' seach button is present in the main search area for quick access to 
+         the wish list movies.
+
 
 ### Returning User Stories Testing
 
+- I want to be able to log in and log out using a unique user account and password created by myself
+
+      -  Unique Username, profile and password present on the site.
+
+- I want to edit and add movies and have that action attributed to my account.
+
+      -  As a registered user, you are able to edit and add movies. Doing so will attribute the addition/change to that user by means of
+         a 'created by' section in the movie card listing.
+
+- I want to be able to delete movies from the database
+
+      -  A registered user is able to delete movies by way of a delete button, a confirmationary button also needs to be pressed.
+
+- I want to be able to search the database for movies
+
+      -  The website includes 2 forms of searching. A button selection by Movie Genre's (including 'Wish list' movies) and by a search bar
+         that can search by movie title or words in the description.
+
+- I want to be able to flag movies that I would like to have.
+
+      -  A toggle switch for a 'Wish list' is included in the edit and add movie forms.  This then allows all movies in the 'Wish list' to be displayed 
+         by clicking the appropriate button in the seach menu.
+
+
+### Admin Stories testing
+
+- To create a website that users can access a catalog of Movies that they own or that they would like to own or watch.
+          
+      -  The website allows registered users to add there own movies and details about the movies. They can flag a movie to place it
+         in the wish list section for easier locating.
+
+- Each user to have a unique login and secure password only known to them.
+
+      -  Users can create there own username during registration and a password known only to them. This is stored in a database with the password 
+         being encrypted using a password_hash. 
+
+- ability for users to log out of the account.
+
+      -  A log out facility is present once the user is logged in.  Logging out remove the session cookie for that user.
+
+- Tasks such as editing and adding movies should display the users details.
+
+      -  The movie card will display a 'created by' section in the Movie information. This will display the users name.
+
+- deleting movies should require a conformationally request to prevent accidental deletion.
+
+      -  Movies can be deleted in the edit movie mode.  Pressing delete will bring up a modal button to confirm deletion.
+
+- users should be able to search for movies, this to be by movie name, description, genre type or by 'wish list'
+
+      -  The website includes 2 forms of searching. A button selection by Movie Genre's (including 'Wish list' movies) and by a search bar
+         that can search by movie title or words in the description.
+
+- A function that allows users to flag a movie that they would like to watch/own.  A Wish list.
+
+      -  A toggle switch for a 'Wish list' is included in the edit and add movie forms.  This then allows all movies in the 'Wish list' to be displayed 
+         by clicking the appropriate button in the seach menu.
+
+- A Profile section for the user to verify there details.
+
+      -  A basic profile page which displays the username and email is included once the user is logged in.
 
 ### Issues found during development
 
@@ -457,21 +546,25 @@ A full walk-through from github is available here [cloning a repository](https:/
 
 - In the env.py 
     - import os
+
     - set confidential data from MongoDB collection
-        -  IP : 0.0.0.0 
-        -  PORT : 5000 
-        -  SECRET_KEY : YOUR_SECRET_KEY 
-        -  MONGO_URI : “mongo db link” 
-        -  MONGO_DBNAME : “database name”
+
+          -  IP : 0.0.0.0 
+          -  PORT : 5000 
+          -  SECRET_KEY : YOUR_SECRET_KEY 
+          -  MONGO_URI : “mongo db link” 
+          -  MONGO_DBNAME : “database name”
+
 
 - The requirements.txt should contain the following dependencies
-    - click==8.0.1
-    - dnspython==2.1.0
-    - Flask==2.0.1
-    - Flask-PyMongo==2.3.0
-    - itsdangerous==2.0.1
-    - pymongo==3.12.0
-    - Werkzeug==2.0.1
+
+      - click==8.0.1
+      - dnspython==2.1.0
+      - Flask==2.0.1
+      - Flask-PyMongo==2.3.0
+      - itsdangerous==2.0.1
+      - pymongo==3.12.0
+      - Werkzeug==2.0.1
 
 - Add Procfile that contains:
     - web: python app.py
@@ -506,10 +599,10 @@ Setup MongoDB security and database access
 
 - Create new app (must use dash or minus , use similar to repo name(or same as)
 
-    - Region = europe
-    - CREATE APP
-    - Deployment method  =  Github
-    - Search for repo to connect to  (PRESS CONNECT)
+        - Region = europe
+        - CREATE APP
+        - Deployment method  =  Github
+        - Search for repo to connect to  (PRESS CONNECT)
 
 Do not auto deploy just yet!!
 
@@ -533,7 +626,7 @@ Enable automatic deploys  then Deploy branch (main)
 
 * [w3schools.com](https://www.w3schools.com)
 
-* [codeinstitute](https://codeinstitute.net/) - Ongoing course progression
+* [codeinstitute](https://codeinstitute.net/) - On-going course progression
 
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/) - User Guide
 
@@ -545,7 +638,7 @@ Enable automatic deploys  then Deploy branch (main)
 
 ### Content
 
-
+- All content is added by the user.
 
 ### Media
 
