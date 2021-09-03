@@ -396,7 +396,7 @@ and a Motorola  one+ mobile phone with no issues noted
 
 -  https://wave.webaim.org/ - A web accessibility checker
 
-    - xxxx
+    - Some minor contrast issue on the buttons, Noted but follows color scheme. Label missing for the search bar, but this was intended.
 
 -  https://pep8online.com - app.py file checked
 
