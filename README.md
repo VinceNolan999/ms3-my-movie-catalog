@@ -226,8 +226,8 @@
 * [Python](https://www.python.org/)
 
   - programming language. Utilizing the following tools:
-    - Pymongo used to link python with mongo DB
-    - Werkzeug password hash and username.
+  - Pymongo used to link python with mongo DB
+  - Werkzeug password hash and username.
 
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
 
@@ -281,11 +281,11 @@ Continuous ongoing testing during development to ensure functions working correc
     - Only access is to the Home and Login section.
     - Brand and Home button takes to correct page.
     - Pressing log in takes to correct screen.
-        - Register link present. 
-        - Registration form displays correctly.
-        - form validation working correctly.
-        - password validation works correctly.  Validation shows message 'passwords do not match'.
-        - user created on MongoDB and profile page present when logged in.
+    - Register link present. 
+    - Registration form displays correctly.
+    - form validation working correctly.
+    - password validation works correctly.  Validation shows message 'passwords do not match'.
+    - user created on MongoDB and profile page present when logged in.
     - Hamburger menu appears at relevant view width and drop down menu works correctly and correct links present and working.
 
 - Search Section
@@ -525,6 +525,10 @@ uniformity in 'for loop' {% for genre in genres %} Forced me to write {% for gen
 
 - Modal button created in the categories section for Genres when deleting.  However on testing it was not working as intended. Confirmation appeared as intended, but when confirmed for deletion the wrong Genre would be deleted. This was always the first displayed in the list. No quick fix found, confirmed modal button setup was correct, decided to leave this out as this is an admin function.   
 
+- Your site is having problems building: The tag for on line 668 in README.md was not properly closed. For more information, see https://docs.github.com/github/working-with-github-pages/troubleshooting-jekyll-build-errors-for-github-pages-sites#tag-not-properly-closed. 
+
+  The above is from github and prevents the site being published. As this is being published by heroku then this is not an issue at this time. I cannot find a fix for this and am apprehensive to pull a thread so close to the deadline.
+
 ### Performance testing
 
   - I have used [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for the performance testing. As the file sizes are
@@ -663,6 +667,5 @@ Enable automatic deploys  then Deploy branch (main)
 ### Acknowledgments.
 
 - Code Institute Pre-loaded github tools
-
 
 [Back to Table of contents](#table-of-contents)
