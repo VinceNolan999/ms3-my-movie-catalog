@@ -226,8 +226,8 @@
 * [Python](https://www.python.org/)
 
   - programming language. Utilizing the following tools:
-    - Pymongo - used to link python with mongo DB
-    - Werkzeug - For password hash and username
+    - Pymongo used to link python with mongo DB
+    - Werkzeug password hash and username.
 
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
 
@@ -280,8 +280,8 @@ Continuous ongoing testing during development to ensure functions working correc
 - Navbar 
     - Only access is to the Home and Login section.
     - Brand and Home button takes to correct page.
-    - Pressing log in takes to correct screen
-      - Register link present. 
+    - Pressing log in takes to correct screen.
+        - Register link present. 
         - Registration form displays correctly.
         - form validation working correctly.
         - password validation works correctly.  Validation shows message 'passwords do not match'.
@@ -303,7 +303,7 @@ Continuous ongoing testing during development to ensure functions working correc
 - Navbar 
   - Confrirmed that there is no access to the admin section.
   - Logged in user lands at the profile page, flash message displayed welcoming User.
-    - flash message displayed if entering incorrect username or password.
+  - flash message displayed if entering incorrect username or password.
   - Menu options goto the correct page.
   - Log Out works correctly.  Only options of home and Log in present, no ability to edit movies.
 
@@ -338,7 +338,7 @@ Continuous ongoing testing during development to ensure functions working correc
   - Cancel button redirects back to home page.
   - Clear button, clears the form.
   - Add Movie creates a new card with the information entered and user taken to Home page.
-    - flash message displayed correctly.
+  - flash message displayed correctly.
   - Have verified that the correct movie information is present. In addition the 'Created by' is showing the username.
   
 
@@ -354,17 +354,17 @@ Continuous ongoing testing during development to ensure functions working correc
 - Categories.
   - Opens up a page which shows the Genres.
   - Add genre reveals new page to input a genre name. 
-    - Cancel redirects to main genre page
-    - clear, clears the form.
-    - Add Genre, when adding new genre,. page redirected to genres page. New genre is displayed.  
-      - Flash message 'New genre added' present
-      - Checking the main Home page the new genre is now included in the Genre select buttons.
-      - The edit button on movie tile selected, from the drop down list the new genre is present.
-      - On add movie form, new genre is present.
+  - Cancel redirects to main genre page
+  - clear, clears the form.
+  - Add Genre, when adding new genre,. page redirected to genres page. New genre is displayed.  
+  - Flash message 'New genre added' present
+  - Checking the main Home page the new genre is now included in the Genre select buttons.
+  - The edit button on movie tile selected, from the drop down list the new genre is present.
+  - On add movie form, new genre is present.
   - Each title has a edit or delete button. Edit brings up the correct genre field, the buttons present works as above.
-    - Editing works as intended,  Flash message 'Genre updated' present
-    - delete button remove the genre from page. In addition no longer selectable as search button or in the edit movie form or add movie form.
-      - Flash message 'Genre Deleted'
+  - Editing works as intended,  Flash message 'Genre updated' present
+  - delete button remove the genre from page. In addition no longer selectable as search button or in the edit movie form or add movie form.
+  - Flash message 'Genre Deleted'
 
 ### Functionality testing
 
