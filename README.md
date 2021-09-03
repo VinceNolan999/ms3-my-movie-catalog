@@ -654,6 +654,8 @@ Enable automatic deploys  then Deploy branch (main)
 
 - All content is added by the user.
 
+- [icons8](https://icons8.com/icons/set/favicon) - Icons and favicons. 
+
 ### Media
 
 - Images are dynamically loaded via a Url and added by a user.                                    
